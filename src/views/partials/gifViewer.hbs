@@ -1,3 +1,5 @@
 {{#each gifs}}
-    <img src="{{this.images.fixed_height.url}}" alt="gif">
+    <img class="gif" onclick="selectGif(this)" src="{{this.images.fixed_height.url}}" alt="gif">
 {{/each}}
+
+<button name="favGifs" value="favGifs" onclick="getGifUrl()">Select</button>

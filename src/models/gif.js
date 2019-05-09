@@ -3,8 +3,12 @@
 const mongoose = require('mongoose');
 
 const gifSchema = new mongoose.Schema( {
+
+    //TODOS unique doesn't work
+
     url: {
         type: String,
+        unique: true,
         required: true
     } 
     // owner: {
