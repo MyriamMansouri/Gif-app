@@ -3,19 +3,18 @@
 const mongoose = require('mongoose');
 
 const gifSchema = new mongoose.Schema( {
-
     //TODOS unique doesn't work
 
     url: {
         type: String,
-        unique: true,
+        // unique: true,
         required: true
-    } 
-    // owner: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     required: true,
-    //     ref: 'User'
-    // }
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Gif'
+    }
     }, {
     timestamps:true
 });

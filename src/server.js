@@ -5,6 +5,7 @@ const exphbs = require( 'express-handlebars')
 
 require('./db/mongoose');
 
+
 const gifRouter = require('./routers/gif')
 const userRouter = require('./routers/user')
 const viewsRouter = require('./routers/views')

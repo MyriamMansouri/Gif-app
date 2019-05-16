@@ -3,6 +3,8 @@ const validator = require('validator');
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 
+const Gif = require('./gif')
+
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -37,6 +39,12 @@ const userSchema = new mongoose.Schema({
             required: true
         }
     }],
+})
+
+userSchema.virtual('gifs', {
+    ref: 'Gif',
+    localField: '_id',
+    foreignField: 'owner'
 })
 
 // hash password before save()
