@@ -1,0 +1,33 @@
+.header {
+    background-color: $main-color;
+    padding: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-bottom: 2px solid $main-shadow;
+    align-items: center;
+    height: 45px;
+
+    .fa-home::before {
+        font-size: 30px;
+    }
+
+    .logo {
+        font-family: 'Bungee Shade', cursive;
+        font-size: 35px;
+        padding: 0 5px;
+        color: $main-contrast
+    }
+}
+
+@media (max-width: 900px) {
+    .search-bar-header {
+        display: none
+    }
+
+    .header {
+        .logo {
+            font-size: 25px;
+        }
+    }
+}

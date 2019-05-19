@@ -1,0 +1,33 @@
+.btn {
+    border-radius: 3px;
+    border-style: none;
+    padding: 7px 23px;
+    margin: 7px 0;
+    min-width: 50px;
+    min-height: 30px;
+    box-shadow: 0 3px #666;
+    &:hover {
+        cursor: pointer;
+    }
+    &:active {
+        transform: translateY(3px);
+      }
+}
+
+.main-btn {
+    background-color: $side-color;
+    color: $side-contrast;
+    border: 2px solid $side-color
+}
+
+.side-btn {
+    background-color: transparent;
+    color: $main-contrast;
+    border: 2px solid $side-color
+}
+
+@media (max-width: 900px) {
+    .btn {
+        padding: 5px 18px;
+    }
+}

@@ -1,0 +1,17 @@
+.search-bar {
+    width: 50%;
+
+    input {
+        width: 60%;
+        background-color: #dddddd;
+        color: #bcb8b8;
+        font-style: italic
+
+    }
+
+    input:focus {
+        color: $main-contrast
+    }
+
+
+}

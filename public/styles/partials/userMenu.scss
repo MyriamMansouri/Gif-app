@@ -1,0 +1,40 @@
+.usermenu-container {
+    align-self: baseline;
+    z-index: 9999;
+
+    nav {
+        display: none;
+    }
+
+    nav.visible {
+        display: block
+    }
+
+    #usermenu-btn {
+        background: none;
+        border: none;
+        padding:5px 15px;
+        .fa-sort-down {
+            padding-left: 7px;
+        }
+
+        .fa-sort-down::before {
+            font-size: 16px;
+        }
+    }
+
+    #usermenu {
+        background-color: $main-color;
+        border-radius: 3px;
+        // box-shadow: 3px 3px 3px $main-shadow;
+        ul {
+            list-style-type:none;
+            padding: 15px;
+            margin: 0;
+        }
+        li{
+            padding:4px;
+        }
+    }
+
+}

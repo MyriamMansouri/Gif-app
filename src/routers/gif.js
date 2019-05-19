@@ -3,10 +3,7 @@ const router = new express.Router();
 
 const auth = require('../middleware/auth');
 
-//Mongoose models
 const Gif = require('../models/gif');
-
-//routes
 
 // Mongoose CRUD (Create, Read, Update, Delete) 
 
@@ -18,8 +15,15 @@ router.post('/gifs', auth, async function (req, res) {
     await Gif.insertMany(gifs)
     res.status(201).send();
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).render('error', {
+      layout: 'default',
+      template: 'error-template',
+      title: "Oups, something went bad. Try again",
+      statusCode: res.statusCode,
+      error: e
+    });
   }
+
 
 });
 
@@ -32,11 +36,17 @@ router.delete('/gifs', auth, async function (req, res) {
   try {
 
     for (const gif of gifs ) {
-      await Gif.deleteMany(gif)
+      await Gif.deleteOne(gif)
     }
 
   } catch (e) {
-    res.status(404).send(e)
+    res.status(404).render('error', {
+      layout: 'default',
+      template: 'error-template',
+      title: "Oups, something went bad. Try again",
+      statusCode: res.statusCode,
+      error: e
+    });
   }
 });
 

@@ -1,6 +1,15 @@
+<section class="gif-viewer">
+    <div class="gifs">
+        {{#each gifs}}
+        <img class="gif" onclick="selectGif(this)" src="{{url}}" alt="gif">
+        {{/each}}
+    </div>
+    {{#if gifs}}
+    <button class="btn main-btn" name="deleteGifs" value="deleteGifs" onclick="deleteGifs()">Delete selected gifs</button>
+    {{else}}
+    <p>No gifs in your collection. Whyyyyyyy ?</p>
+    {{/if}}
+    
 
-{{#each gifs}}
-    <img class="gif" onclick="selectGif(this)" src="{{url}}" alt="gif">
-{{/each}}
+</section>
 
-<button name="deleteGifs" value="deleteGifs" onclick="deleteGifs()">Delete selected gifs</button>

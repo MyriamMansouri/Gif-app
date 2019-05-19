@@ -1,0 +1,12 @@
+.footer {
+    background-color: $main-color;
+    color:$main-contrast;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 2px solid $main-shadow;
+
+}

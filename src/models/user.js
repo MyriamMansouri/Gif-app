@@ -3,19 +3,20 @@ const validator = require('validator');
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken');
 
-const Gif = require('./gif')
-
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
+        maxlength: 50,
+        minlength: 3
     },
     email: {
         type: String,
         trim: true,
         lowercase: true,
         unique: true,
+        maxlength: 50,
         validate(value) {
             if (!validator.isEmail(value)) {
                 throw new Error('Please, enter your email in a valid format')

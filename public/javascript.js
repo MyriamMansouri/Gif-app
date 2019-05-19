@@ -3,6 +3,11 @@
 
 document.getElementsByClassName("gif").addEventListener("click", selectGif);   
 document.getElementById("logout").addEventListener("click", logout);   
+document.getElementById("usermenu-btn").addEventListener("click", openUserMenu); 
+
+function openUserMenu() {
+    document.getElementById('usermenu').classList.toggle('visible')
+}
 
 function selectGif(gif) {
     gif.classList.toggle('selected');

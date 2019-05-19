@@ -1,14 +1,19 @@
-{{ this.user.name }}
-
 {{#if user}}
-<nav>
-    <ul>
-        <li><a href="/users/profile">My Gifs</a></li>
-        <li id="logout" onclick="logout()"><a href="/">Log Out</a></li>
-    </ul>
-</nav>
+<div class="usermenu-container">
+    <button id="usermenu-btn" onclick="openUserMenu()">
+        <p>Hi, {{ this.user.name }}<i class="fas fa-sort-down"></i></p>
+    </button>
+    <nav id="usermenu">
+        <ul>
+            <li><a href="/users/profile">My Gifs</a></li>
+            <li id="logout" onclick="logout()"><a href="/">Log Out</a></li>
+        </ul>
+    </nav>
+</div>
 
 {{else}}
-<button><a href="/login">Log in</a></button>
-<button><a href="/signup">Sign up</a></button>
+<div class="user-connection">
+    <a href="/login"><button class="btn side-btn">Log in</button></a>
+    <a href="/signup"><button class="btn main-btn">Sign up</button></a>
+</div>
 {{/if}}

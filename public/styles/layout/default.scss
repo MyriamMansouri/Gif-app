@@ -1,0 +1,76 @@
+$main-color:#fff176;
+$main-shadow:#dddad5;
+$main-contrast: black;
+$side-color:#8601ff;
+$side-shadow:#4b276c;
+$side-contrast: white;
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: $main-contrast;
+    color: $side-contrast
+}
+
+html,
+body,
+input,
+button,
+a {
+    font-family: 'Arvo', serif;
+    font-size: 1rem;
+}
+
+p {
+    padding: 11px 0;
+    margin: 0;
+}
+
+.container {
+    margin: 30px auto;
+    padding: 10px;
+    max-width: 800px;
+    min-height: 75%;
+}
+
+form {
+    &>* {
+        display: block;
+    }
+    label {
+        margin: 15px 0 5px;
+    }
+    input {
+        height: 25px;
+        border-radius: 3px;
+        padding: 0 5px;
+        min-width: 250px;
+    }
+    .button{
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 900px) {
+    html,
+    body,
+    input,
+    button,
+    a {
+        font-size: 0.95rem;
+    }
+
+    form {
+        input {
+            height: 30px;
+            width:90%;
+            max-width: 30px;
+        }
+        .button{
+            margin: 15px 0;
+        }
+    }
+
+}

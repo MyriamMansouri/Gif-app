@@ -1,4 +1,13 @@
-<form >
- <input type="text" name="term">
- <button type="submit">Search</button>
-</form>
+<div class="search-bar">
+    {{#if user}}
+    <form action="/users">
+        <input type="text" name="term" placeholder="I want new gifs">
+        {{!-- <button class="btn" type="submit">Search</button> --}}
+    </form>
+    {{else}}
+        <form action="/">
+        <input type="text" name="term" placeholder="I want new gifs">
+        {{!-- <button class="btn" type="submit">Search</button> --}}
+    </form>
+    {{/if}}
+</div>

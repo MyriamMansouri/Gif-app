@@ -1,0 +1,54 @@
+.gif-viewer {
+
+    height: 100%;
+
+    .gifs {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        margin: 15px 0;
+    }
+
+    .gif {
+        margin: 5px;
+        box-shadow: 4px 4px $side-shadow
+    }
+
+    .gif:hover {
+        cursor: pointer;
+    }
+
+    .gif.selected {
+        filter: saturate(10);
+        box-shadow: 6px 6px $side-shadow;
+    }
+
+    p,
+    button,
+    .gif {
+        margin: 5px;
+    }
+
+    .search-bar-viewer {
+        display: none
+    }
+}
+
+@media (max-width: 900px) {
+    .gif-viewer {
+        .search-bar-viewer {
+            margin: 15px 5px 15px;
+            display: block;
+            
+            input {
+                width: 80vw;
+                max-width: 400px;
+            }
+        }
+
+        .gif {
+            max-width:95%;
+            margin: 5px auto;
+        }
+    }
+}

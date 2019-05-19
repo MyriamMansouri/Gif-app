@@ -1,7 +1,11 @@
-{{#if user}}
-<a href="/users">Home</a>
-{{else}}
-<a href="/">Home</a>
-{{/if}}
-
-{{> userMenu }}
+<header class="header">
+    {{#if user}}
+    <a class="logo" href="/users">FavGifs</a>
+    {{else}}
+    <a class="logo" href="/">FavGifs</a>
+    {{/if}}
+    <div class="search-bar-header">
+        {{> searchBar}}
+    </div>
+    {{> userMenu }}
+</header>

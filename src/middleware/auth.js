@@ -5,7 +5,7 @@ const auth = async (req, res, next) => {
 
     try {
         const token = req.headers.cookie.replace('auth=', '');
-        
+
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findOne({ _id: decoded._id, 'tokens.token': token });
 
@@ -14,12 +14,18 @@ const auth = async (req, res, next) => {
         }
 
         req.token = token;
-        req.user = user; 
+        req.user = user;
 
         next();
     } catch (e) {
-        res.status(401).send( { error: 'please authenticate' })
-     
+        res.status(401).render('error', {
+            layout: 'default',
+            template: 'error-template',
+            title: "Please authenticate",
+            statusCode: res.statusCode,
+            error: e
+        })
+
     }
 }
 

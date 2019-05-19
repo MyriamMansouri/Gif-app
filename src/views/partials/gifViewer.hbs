@@ -1,8 +1,27 @@
-{{#each gifs}}
-    <img class="gif" onclick="selectGif(this)" src="{{this.images.fixed_height.url}}" alt="gif">
-{{/each}}
+<section class="gif-viewer">
+    <div class="search-bar-viewer">
+        {{> searchBar}}
+    </div>
 
-{{#if user}}
-    <button name="favGifs" value="favGifs" onclick="addGifs()">Select</button>
-{{/if}}
+    {{#if user}}
+    <p>Search for new gifs and select them to add them to your collection. Yay! So Exciting!</p>
+    {{else}}
+    <p>Create an account or log in to start collecting gifs! Whoa! So cool!</p>
+    {{/if}}
 
+    {{#if user}}
+    {{#if gifs}}
+    <button class="btn main-btn" name="favGifs" value="favGifs" onclick="addGifs()">Add to collection</button>
+    {{/if}}
+    {{/if}}
+    <div class="gifs">
+        {{#each gifs}}
+        <img class="gif" onclick="selectGif(this)" src="{{this.images.fixed_height.url}}" alt="gif">
+        {{/each}}
+    </div>
+    {{#if user}}
+    {{#if gifs}}
+    <button class="btn main-btn" name="favGifs" value="favGifs" onclick="addGifs()">Add to collection</button>
+    {{/if}}
+    {{/if}}
+</section>

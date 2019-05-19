@@ -19,7 +19,13 @@ router.get('/', async function (req, res) {
     });
 
   } catch (e) {
-    res.send(e)
+    res.render('error', {
+      layout: 'default',
+      template: 'error-template',
+      title: "Oups, something went bad. Try again",
+      statusCode: res.statusCode,
+      error: e
+    });
   }
 
 });
@@ -37,7 +43,13 @@ router.get('/users', auth, async function (req, res) {
     });
 
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).render('error', {
+      layout: 'default',
+      template: 'error-template',
+      title: "Oups, something went bad. Try again",
+      statusCode: res.statusCode,
+      error: e
+    });
   }
 
 });
@@ -48,7 +60,6 @@ const user = await User.findById(req.user.id).populate('gifs');
 
 gifs = user.gifs.map( el => ( {url: el.url} ))
 
-console.log(user)
   try {
     res.render('userProfile', {
       layout: 'default',
@@ -58,7 +69,13 @@ console.log(user)
     });
 
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).render('error', {
+      layout: 'default',
+      template: 'error-template',
+      title: "Oups, something went bad. Try again",
+      statusCode: res.statusCode,
+      error: e
+    });
   }
 
 });
@@ -73,8 +90,13 @@ router.get('/signup', async function (req, res) {
     });
 
   } catch (e) {
-    console.log(e)
-    res.send(e)
+    res.render('error', {
+      layout: 'default',
+      template: 'error-template',
+      title: "Oups, something went bad. Try again",
+      statusCode: res.statusCode,
+      error: e
+    });
   }
 
 })
@@ -88,7 +110,13 @@ router.get('/login', async function (req, res) {
     });
 
   } catch (e) {
-    res.send(e)
+    res.render('error', {
+      layout: 'default',
+      template: 'error-template',
+      title: "Oups, something went bad. Try again",
+      statusCode: res.statusCode,
+      error: e
+    });
   }
 
 })
