@@ -44,8 +44,9 @@ function deleteGifs() {
         succes:function (xhr) {
             alert("success");
           },
-        error:function (xhr) {
-            alert("failed");
+          error: function(xhr, status, error) {
+            var err = eval("(" + xhr.responseText + ")");
+            alert(err.Message);
           }
      });
 
