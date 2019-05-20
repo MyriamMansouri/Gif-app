@@ -40,7 +40,10 @@ function deleteGifs() {
         type: 'DELETE',
         contentType: 'application/json',
         dataType: "json",
-        data:JSON.stringify({urlList: urls})
+        data:JSON.stringify({urlList: urls}),
+        error:function (xhr) {
+            alert("failed");
+          }
      });
 
      window.location.assign('/users/profile')
