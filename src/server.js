@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors');
 const favicon = require('serve-favicon')
 const path = require('path')
 const exphbs = require( 'express-handlebars')
@@ -14,6 +15,8 @@ const port = process.env.PORT
 
 const app = express();
 
+
+app.use(cors({ 'header': 'content-disposition'}));
 app.use(favicon(path.join(__dirname, '..','public', 'favicon.png')))
 app.use(express.static('public'));
 
