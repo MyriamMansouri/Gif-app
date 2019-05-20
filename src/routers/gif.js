@@ -31,14 +31,14 @@ router.post('/gifs', auth, async function (req, res) {
 router.delete('/gifs', auth, async function (req, res) {
 
   const gifsArr = req.body.urlList
-  const gifs = gifsArr.map(el => ({ url: el, owner: req.user._id}))
+  const gifs = gifsArr.map(el => ({ url: el, owner: req.user._id }))
 
   try {
 
-    for (const gif of gifs ) {
+    for (const gif of gifs) {
       await Gif.deleteOne(gif)
     }
-
+    res.send()
   } catch (e) {
     res.status(404).render('error', {
       layout: 'default',
