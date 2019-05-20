@@ -16,9 +16,10 @@ const port = process.env.PORT
 const app = express();
 
 
-app.use(cors({ 'header': 'content-disposition'}));
+app.use(cors({ 'header': 'content-disposition'}))
+app.set('trust proxy', true)
 app.use(favicon(path.join(__dirname, '..','public', 'favicon.png')))
-app.use(express.static('public'));
+app.use(express.static('public'))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
