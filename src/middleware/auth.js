@@ -4,8 +4,8 @@ const User = require('../models/user');
 const auth = async (req, res, next) => {
 
     try {
-        const token = req.headers.cookie.replace('auth=', '');
-
+        // const token = req.headers.cookie.replace('auth=', '');
+        const token = req.header('x-auth');
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const user = await User.findOne({ _id: decoded._id, 'tokens.token': token });
 

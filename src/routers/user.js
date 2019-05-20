@@ -16,7 +16,8 @@ router.post('/signup', async function (req, res) {
 
         await user.save();
         const token = await user.generateAuthToken();
-        res.cookie('auth',token)
+        // res.cookie('auth',token)
+        res.header('x-auth', token)
         res.redirect('/users')
 
     } catch (e) {
@@ -36,7 +37,8 @@ router.post('/login', async function (req, res) {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password);
         const token = await user.generateAuthToken();
-        res.cookie('auth',token);
+        // res.cookie('auth',token);
+        res.header('x-auth', token)
         res.redirect('/users' )
 
     } catch (e) {
@@ -56,7 +58,7 @@ router.post('/users/logout', auth, async function (req, res) {
     try {
         req.user.tokens = req.user.tokens.filter((token) => { token.token !== req.token });
         await req.user.save();
-        res.clearCookie("auth");
+        // res.clearCookie("auth");
         res.send();
     } catch (e) {
         res.status(500).render('error', {
