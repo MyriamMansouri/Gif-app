@@ -38,6 +38,7 @@ function deleteGifs() {
     $.ajax({
         url: '/gifs',
         type: 'DELETE',
+        cache: false,
         contentType: 'application/json',
         dataType: "json",
         data:JSON.stringify({urlList: urls}),
