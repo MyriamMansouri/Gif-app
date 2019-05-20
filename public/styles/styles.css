@@ -49,7 +49,7 @@ form .button {
   form input {
     height: 30px;
     width: 90%;
-    max-width: 30px; }
+    max-width: 100px; }
   form .button {
     margin: 15px 0; } }
 
