@@ -41,7 +41,7 @@ function deleteGifs() {
         contentType: 'application/json',
         dataType: "json",
         data:JSON.stringify({urlList: urls}),
-        succes:function (xhr) {
+        success:function (xhr) {
             alert("success");
           },
           error: function(xhr, status, error) {
