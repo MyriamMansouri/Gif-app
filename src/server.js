@@ -17,7 +17,7 @@ const app = express();
 
 
 app.use(cors({ 'header': 'content-disposition'}))
-app.set('trust proxy', true)
+app.enable('trust proxy')
 app.use(favicon(path.join(__dirname, '..','public', 'favicon.png')))
 app.use(express.static('public'))
 
